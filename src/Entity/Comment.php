@@ -124,4 +124,9 @@ class Comment
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return implode(' : ', [$this->author, $this->text]);
+    }
 }
