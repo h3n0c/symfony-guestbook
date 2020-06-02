@@ -37,7 +37,15 @@ class AppFixtures extends Fixture
         $comment1->setAuthor('admin');
         $comment1->setEmail('admin@mail.com');
         $comment1->setText('This was a great conference.');
+        $comment1->setState('published');
         $manager->persist($comment1);
+
+        $comment2 = new Comment();
+        $comment2->setConference($amsterdam);
+        $comment2->setAuthor('jonas');
+        $comment2->setEmail('jonas@mail.com');
+        $comment2->setText('I think this one is going to be moderated.');
+        $manager->persist($comment2);
 
         $admin = new Admin();
         $admin->setRoles(['ROLE_ADMIN']);
